@@ -1,0 +1,22 @@
+{
+  "name": "readyLoadImg",
+  "main": "readyLoadImg.js",
+  "homepage": "https://github.com/WittBulter/readyLoadImg",
+  "authors": [
+    "WittBulter <nanazuimeng123@gmail.com>"
+  ],
+  "description": "图片延时替换/延时加载图片/预加载图片插件",
+  "moduleType": [],
+  "keywords": [
+    "readyLoadImg"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
