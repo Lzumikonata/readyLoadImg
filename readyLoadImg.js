@@ -18,7 +18,7 @@
                 this.imageList = [];
                 this.bgList = [];
                 this.url = '';
-
+                this.img = d.getElementsByTagName('img');
                 this.background = false;
                 _this = this;
             },
@@ -36,7 +36,7 @@
                 return list;
             },
             setImage = function (url, img, list, bg) {
-                var timeout = setTimeout(function () {
+                var timeOut = setTimeout(function () {
                     var time = setInterval(function () {
                         if (img[img.length - 1].complete) {
                             for(var i = 0; i < img.length; i ++){
@@ -46,7 +46,7 @@
                                 list[i].setAttribute('src', url[i]);
                             }
                             w.clearInterval(time);
-                            w.clearTimeout(timeout);
+                            w.clearTimeout(timeOut);
                         }
                     },300);
                 },_this.time);
@@ -57,8 +57,7 @@
                 this.background = toggle;
             },
             getMin: function (){    //获得所有需要再次加载的img
-                var _min = d.getElementsByTagName('img'),
-                    _loadList = [],
+                var _loadList = [],
                     _bgList = [],
                     _bgUrlList = [];
                 var style;
@@ -74,11 +73,11 @@
                         }
                     }
                 }
-                for(var i = 0; i < _min.length; i ++){
-                    if (_min[i].getAttribute (this.attrName) != null) {
-                        this.url = _min[i].getAttribute ('src');
+                for(var i = 0; i < this.img.length; i ++){
+                    if (this.img[i].getAttribute (this.attrName) != null) {
+                        this.url = this.img[i].getAttribute ('src');
                         if (this.url && this.url.length > 0 && this.url.indexOf(this.srcName) >= 0) {
-                            this.imageList.push(_min[i]);
+                            this.imageList.push(this.img[i]);
                             _loadList.push(this.url.split(this.srcName)[0] + this.url.split(this.srcName)[1]);
                         }
                     }
@@ -115,11 +114,31 @@
                     }
                 }
             },
-            delay: function () {
-
-            },
-            error: function (number) {
-                console.log (['', '', ''][number]);
+            delay: function (setTime) {
+                var _loadList = [],
+                    _image = [],
+                    _imagePre = [];
+                setTime ? '' : setTime = 2000;
+                for(var i = 0; i < this.img.length; i ++){
+                    if (this.img[i].getAttribute ('delay-img') != null) {
+                        this.url = this.img[i].getAttribute ('src');
+                        this.img[i].setAttribute('src','');
+                        _image.push(this.img[i]);
+                        _loadList.push(this.url);
+                    }
+                }
+                var timeOut = setTimeout(function () {
+                    _imagePre = _this.preLoad(_loadList);
+                    var time = setInterval(function () {
+                        if (_imagePre[_imagePre.length - 1].complete) {
+                            for(var i = 0; i < _image.length; i ++){
+                                _image[i].setAttribute('src', _loadList[i]);
+                            }
+                            w.clearInterval(time);
+                            w.clearTimeout(timeOut);
+                        }
+                    },300);
+                },setTime);
             }
         };
 

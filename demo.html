@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>readyLoadImg-test</title>
+</head>
+<style>
+    div:first-child{
+        width: 600px;
+        height: 400px;
+        overflow: hidden;
+    }
+    div:first-child>img{
+        width: 100%;
+    }
+</style>
+<body>
+<div>
+    <p>低质量图片优先加载,完成渲染/固定时间后替换高质量图片</p>
+    <img src="./images/bower-min.png" alt="" load-img/>
+</div>
+<div>
+    <p>延时加载图片</p>
+    <img src="./images/bower-logo.png" alt="" delay-img />
+</div>
+<script src="readyLoadImg.js"></script>
+<script>
+//setting
+//    var RLI = new readyLoadImg(attrName, srcName, timeOut)  default===>>> ('load-img', '-min', '100')
+//    RLI.start();
+
+//background-url setting
+//    var RLI = new readyLoadImg ();
+//    RLI.bgToggle(true);
+//    RLI.start();
+
+//    start
+    var RLI = new readyLoadImg ();
+    RLI.start();
+    RLI.delay();
+
+</script>
+</body>
+</html>
