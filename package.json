@@ -1,0 +1,19 @@
+{
+    "name": "readyLoadImg",
+    "version": "1.0.0",
+    "description": "图片延时替换/延时加载图片/预加载图片插件",
+    "files": [
+        "README.md",
+        "readyLoadImg"
+    ],
+    "homepage": "https://github.com/WittBulter/readyLoadImg",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/WittBulter/readyLoadImg.git"
+    },
+    "main": "readyLoadImg.js",
+    "authors": [
+        "WittBulter <nanazuimeng123@gmail.com>"
+    ],
+    "license": "MIT"
+}
