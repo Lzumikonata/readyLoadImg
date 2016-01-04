@@ -19,7 +19,7 @@ var imgLoad = new readyLoadImg(attrName, srcName, timeOut);
 ```
 
 
-- **attrName**: 图片上的标记属性,如<img load-img>.默认为'load-img',如果有冲突可以替换为其他字符串.
+- **attrName**: 图片上的标记属性,如```<img load-img>```.默认为'load-img',如果有冲突可以替换为其他字符串.
 - **srcName**: 有损低质量图片与高质量图片命名区别,默认为'-min'.比如你可以将有损图片命名为'demo-min.png',而高质量图片为'demo.png'.
 - **timeOut**: 在页面渲染完成后是否需要继续等待,默认为100ms.
 
