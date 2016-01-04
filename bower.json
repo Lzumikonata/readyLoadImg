@@ -1,6 +1,7 @@
 {
   "name": "readyLoadImg",
   "main": "readyLoadImg.js",
+  "version": "1.0.0",
   "homepage": "https://github.com/WittBulter/readyLoadImg",
   "authors": [
     "WittBulter <nanazuimeng123@gmail.com>"
