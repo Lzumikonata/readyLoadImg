@@ -54,6 +54,7 @@ var imgLoad = new readyLoadImg(attrName, srcName, timeOut);
 		<img src="./images/bower-logo.png" alt="" delay-img />
 		<script type="text/javascript">
 			var RLI = new readyLoadImg ();
-      RLI.delay(); //支持一个参数,为延时时间,单位:毫秒
+      		RLI.delay(); 	//支持一个参数,为延时时间,单位:毫秒
+      		RLI.old;		//被readyLoadImg覆盖的全局记录在old上
 		</script>
 ```
