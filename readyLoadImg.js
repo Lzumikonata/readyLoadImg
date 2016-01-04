@@ -139,7 +139,8 @@
                         }
                     },300);
                 },setTime);
-            }
+            },
+            old: _old
         };
 
         if (typeof define === "function" && define.amd ) {
