@@ -3,7 +3,8 @@
 1. 页面默认加载有损压缩图片,如demo-min.png,在dom渲染完成后它们将会被自动替换成高质量图片,而且已经预加载完成,并不会出现卡屏现象  
 2. css中背景图片也可以通过有损压缩,页面完成后替换.  
 3. 指定某几张图片延时加载  
-4. 指定预加载任意的图片数组    
+4. 指定预加载任意的图片数组 
+5. 你可以通过gulp来批量压缩重命名图片文件(参见demo-gulpFile.js)
 
 **安装readyLoadImg**
 你可以下载源文件或通过bower管理工具安装
@@ -36,10 +37,10 @@ var imgLoad = new readyLoadImg(attrName, srcName, timeOut);
 ```
 
 
-- **bgToggle(true)**: 开启此模式后,'load-img'属性可以标记在任意HTML元素上,插件将去寻找它们的背景图片,在预加载完成后将它们逐一替换.
+- **bgToggle(true)**: 开启此模式后,'load-img'属性可以标记在任意HTML元素上,插件将去寻找它们的背景图片,在预加载完成后将它们逐一替换.  
 
-
-
+  
+  
 
 使用gulp打包压缩图片与重命名(具体参见demo-gulpFile.js,需要的服务请先npm install):
 ```
