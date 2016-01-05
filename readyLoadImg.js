@@ -41,7 +41,7 @@
                         if (img[img.length - 1].complete) {
                             for(var i = 0; i < img.length; i ++){
                                 if (bg) {
-                                    return list[i].style.background = 'url(' + url[i] + ')';
+                                    return list[i].style.backgroundImage = 'url(' + url[i] + ')';
                                 }
                                 list[i].setAttribute('src', url[i]);
                             }
@@ -151,6 +151,7 @@
         w.readyLoadImg = RLI;
     }
 })(window, document);
+
 
 
 
