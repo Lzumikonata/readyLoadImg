@@ -5,6 +5,11 @@
 3. 指定某几张图片延时加载  
 4. 指定预加载任意的图片数组    
 
+**安装readyLoadImg**
+你可以下载源文件或通过bower管理工具安装
+```
+bower install readyLoadImg --save-dev
+```
 
 **插件不依赖第三方库，同时支持AMD([requirejs](http://apps.bdimg.com/libs/require.js/2.1.9/require.js))方式引入.**
 首先你需要通过'new'来创建一个实例,然后通过start启动:
@@ -36,7 +41,23 @@ var imgLoad = new readyLoadImg(attrName, srcName, timeOut);
 
 
 
-
+使用gulp打包压缩图片与重命名(具体参见demo-gulpFile.js,需要的服务请先npm install):
+```
+  gulp.task('img', function () {
+      return gulp.src('images/*.{png,jpg,gif}')
+          .pipe(imagemin({
+              optimizationLevel: 7, //取值范围：0-7（优化等级）
+              progressive: false, //无损
+              interlaced: true, //隔行扫描
+              multipass: true, //多次优化svg
+              svgoPlugins: [{removeViewBox: false}],//SVG-viewbox
+              use: [pngquant()] //高度压缩
+          }))
+          .pipe(rename({ suffix: '-min' }))
+          .pipe(gulp.dest('test'))
+          .pipe(notify({ message: 'image task over' }));
+  })
+```
 
 两个简单的使用示例:
 
